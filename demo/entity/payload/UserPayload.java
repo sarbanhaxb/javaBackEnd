@@ -14,6 +14,6 @@ public record UserPayload(
         @Size(min = 5, max = 100, message = "Email must be between 5 and 50 characters")
         String email,
         @NotNull(message = "Age is null")
-        @Min(value = 18, message = "Age must be greater than 18")
+        @Min(value = 18, message = "Age must be greater than 17")
         int age) {
 }

@@ -85,17 +85,9 @@ public class UserController {
     },
     parameters = {
             @Parameter(name = "id", description = "ID пользователя")
-    },
-            requestBody = @io.swagger.v3.oas.annotations.parameters.RequestBody(description = "Удаление пользователя", required = true)
-    )
-    @DeleteMapping
-    public ResponseEntity<Void> deleteUser(@RequestParam(required = false) Integer id){
-        if (id == null || userService.findUser(id).isEmpty()){
-            return ResponseEntity.notFound().build();
-        }
-        userService.deleteUser(id);
-        return ResponseEntity.noContent().build();
-    }
+    }    )
+    @DeleteMapping("/{id}")
+    void deleteUser(@PathVariable int id){userService.deleteUser(id);}
 
 //    @GetMapping
 

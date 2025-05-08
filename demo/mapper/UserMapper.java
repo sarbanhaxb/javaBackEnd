@@ -2,7 +2,9 @@ package com.example.demo.mapper;
 
 import com.example.demo.entity.User;
 import com.example.demo.entity.payload.UserPayload;
+import org.springframework.stereotype.Component;
 
+@Component
 public class UserMapper {
 
     public User toEntity(UserPayload payload){
