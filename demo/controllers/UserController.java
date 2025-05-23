@@ -25,7 +25,7 @@ public class UserController {
     private final UserService userService;
 
     @Operation(summary = "Получить всех пользователей", tags = {"Users"}, description = "Контроллер возвращает всех пользователей", responses = {
-    @ApiResponse(responseCode = "200", description = "Пользователи найдены")})
+    @ApiResponse(responseCode = "207", description = "Пользователи найдены")})
     @GetMapping
     public ResponseEntity<Iterable<User>> getUsers(){
         return ResponseEntity.ok(userService.findUsers());
